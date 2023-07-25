@@ -1,2 +1,5 @@
-<div>Hero id ={{ hero.id }}</div>
-<div>Hero name ={{ hero.name.toUpperCase }}</div>
+<div>
+  <label for="name">Hero name:</label>
+  <input id="name" [(ngModel)]="hero.name" placeholder="name" />
+</div>
+<div>{{ hero.name }}</div>
