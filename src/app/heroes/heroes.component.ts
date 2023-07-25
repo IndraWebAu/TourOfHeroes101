@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Heroes } from '../mock-heroes';
 import { Hero } from '../interfaces/hero';
+
 
 @Component({
   selector: 'app-heroes',
@@ -7,5 +9,5 @@ import { Hero } from '../interfaces/hero';
   styleUrls: ['./heroes.component.less']
 })
 export class HeroesComponent {
-  hero: Hero = { id: 1, name: 'Fred' }
+  heroes: Hero[] = Heroes;
 }
