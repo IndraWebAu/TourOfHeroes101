@@ -1,5 +1,9 @@
 # TourOfHeroes101
 
+## This is the second tour of heroes project
+
+This is to focus on specfic elements of Angular and check in smaller but more significant points of learning.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
 
 ## Development server
