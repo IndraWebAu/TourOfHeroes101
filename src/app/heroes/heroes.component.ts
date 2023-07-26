@@ -19,8 +19,9 @@ export class HeroesComponent {
     this.selectedHero = hero;
 
   getHeroes = () =>
-    this.heroes = this.heroesService
-      .getHeroes();
+    this.heroesService
+      .getHeroes()
+      .subscribe(response => this.heroes = response);
 
   ngOnInit() {
     this.getHeroes()
