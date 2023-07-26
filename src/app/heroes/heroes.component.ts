@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Heroes } from '../mock-heroes';
 import { Hero } from '../interfaces/hero';
 import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 
 @Component({
@@ -13,10 +14,16 @@ export class HeroesComponent {
   heroes: Hero[] = [];
   selectedHero?: Hero;
 
-  constructor(private heroesService: HeroService) { }
+  constructor(
+    private heroesService: HeroService,
+    private messagesService: MessageService) { }
 
-  onSelect = (hero: Hero) =>
+  onSelect = (hero: Hero) => {
     this.selectedHero = hero;
+    this.messagesService
+      .add(`Heroes component: selected hero id: ${hero.id}`);
+  }
+
 
   getHeroes = () =>
     this.heroesService
