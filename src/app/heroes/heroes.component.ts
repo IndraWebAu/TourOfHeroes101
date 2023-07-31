@@ -11,19 +11,12 @@ import { MessageService } from '../message.service';
   styleUrls: ['./heroes.component.less']
 })
 export class HeroesComponent {
+
   heroes: Hero[] = [];
-  selectedHero?: Hero;
 
   constructor(
     private heroesService: HeroService,
     private messagesService: MessageService) { }
-
-  onSelect = (hero: Hero) => {
-    this.selectedHero = hero;
-    this.messagesService
-      .add(`Heroes component: selected hero id: ${hero.id}`);
-  }
-
 
   getHeroes = () =>
     this.heroesService
