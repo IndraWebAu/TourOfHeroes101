@@ -22,6 +22,16 @@ export class HeroesComponent {
       .getHeroes()
       .subscribe(response => this.heroes = response);
 
+  addHero = (heroName: string) => {
+    if (!heroName) return;
+
+    const name = heroName.trim();
+
+    this.heroesService
+      .addHero({ name } as Hero)
+      .subscribe(hero => this.heroes.push(hero));
+  }
+
   ngOnInit() {
     this.getHeroes()
   }

@@ -8,3 +8,7 @@
     </a>
   </li>
 </ul>
+
+<label for="addHero">Add hero</label>
+<input id="heroName" type="input" #heroName style="display: block" />
+<button type="button" (click)="addHero(heroName.value)">Add</button>
