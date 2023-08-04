@@ -28,6 +28,10 @@ export class HeroDetailComponent {
       .subscribe(response => this.hero = response);
   }
 
+  updateHero = (hero: Hero) => this.heroService
+    .updateHero(hero)
+    .subscribe(() => this.goBack());
+
   goBack = () =>
     this.location.back();
 

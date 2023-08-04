@@ -12,6 +12,10 @@ export class HeroService {
 
   private heroUrl = 'api/heroes';
 
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-type': 'application/json' })
+  };
+
   constructor(
     private messagesService: MessageService,
     private http: HttpClient) { }
@@ -32,6 +36,14 @@ export class HeroService {
         tap(_ => this.log(`Fetched hero id:${id}`)),
         catchError(this.handleError<Hero>(`Get hero id ${id}`))
       );
+  }
+
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put<Hero>(this.heroUrl, hero, this.httpOptions).pipe
+      (
+        tap(_ => this.log(`Updated hero id:${hero.id}`)),
+        catchError(this.handleError<Hero>(`Update hero id`))
+      )
   }
 
   private log = (message: string) =>
