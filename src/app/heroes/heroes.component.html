@@ -6,9 +6,14 @@
       ><span class="badge">{{ hero.id }}</span>
       <span class="name">{{ hero.name }}</span>
     </a>
+    <button type="button" class="delete" (click)="deleteHero(hero)">X</button>
   </li>
 </ul>
 
-<label for="addHero">Add hero</label>
-<input id="heroName" type="input" #heroName style="display: block" />
-<button type="button" (click)="addHero(heroName.value)">Add</button>
+<div>
+  <label for="new-hero">Add hero</label>
+  <input id="new-hero" type="input" #heroName />
+  <button type="button" class="add-button" (click)="addHero(heroName.value)">
+    Add
+  </button>
+</div>
